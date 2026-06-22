@@ -1,0 +1,8 @@
+﻿config/app.php
+config/app.local.php
+config/*.back
+config/*.bak
+config/*.backup
+public/error_log
+public/*error_log*
+storage/uploads/

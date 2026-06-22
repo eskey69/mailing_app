@@ -1,0 +1,50 @@
+<?php
+
+return [
+    'mail' => [
+        'delivery_mode' => 'redirect',
+        'redirect_to_email' => 'eskey69@gmail.com',
+        'redirect_subject_prefix' => '[TEST MAILING] ',
+    ],
+    'automation' => [
+        'open_tracking_enabled' => true,
+        'open_followup_delay_days' => 3,
+        'unopened_followup_delay_days' => 7,
+        'contact_later_followup_delay_days' => 14,
+        'cold_max_attempts_before_cooldown' => 3,
+        'cooldown_retry_days' => 14,
+    ],
+    'ai' => [
+        'openai_api_key' => 'OPENAI_API_KEY_HERE',
+        'model' => 'gpt-5-mini',
+        'organization' => '',
+        'project' => '',
+        'base_url' => 'https://api.openai.com/v1',
+        'store' => false,
+        'connect_timeout' => 15,
+        'timeout' => 120,
+    ],
+    'photo_library' => [
+        'source_url' => 'https://polonads.com/images/kategorie',
+        'source_path' => '/home/ACCOUNT/public_html/images/kategorie',
+        'max_depth' => 2,
+        'extensions' => ['jpg', 'jpeg', 'png', 'webp'],
+        'category_folders' => [
+            3 => '3_dam_prace',
+            4 => '4_uslugi',
+            5 => '5_budowa_i_remonty',
+            6 => '6_transport_i_przeprowadzki',
+            9 => '9_it_i_internet',
+            10 => '10_reklama_i_fotografia',
+            11 => '11_opieka_i_pomoc_domowa',
+            12 => '12_nauka_i_kursy',
+            13 => '13_zdrowie_i_uroda',
+            14 => '14_prawo_i_finanse',
+            16 => '16_nieruchomosci',
+            21 => '21_paczki_do_polski',
+            22 => '22_ubezpieczenia',
+            23 => '23_sprzedam_kupie_oddam',
+            36 => '36_organizacje_spoleczne_i_religijne',
+        ],
+    ],
+];
