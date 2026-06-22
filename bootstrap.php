@@ -1,10 +1,44 @@
-<?php
+﻿<?php
 
 declare(strict_types=1);
 
 date_default_timezone_set('Europe/Warsaw');
 
 define('APP_ROOT', __DIR__);
+
+function loadProjectEnvFile(string $filePath): void
+{
+    if (!is_file($filePath)) {
+        return;
+    }
+
+    $lines = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    if ($lines === false) {
+        return;
+    }
+
+    foreach ($lines as $line) {
+        $raw = trim($line);
+        if ($raw === '' || str_starts_with($raw, '#') || !str_contains($raw, '=')) {
+            continue;
+        }
+
+        [$key, $value] = explode('=', $raw, 2);
+        $key = trim($key);
+        $value = trim($value, " \t\n\r\0\x0B\"'");
+
+        if ($key === '' || getenv($key) !== false) {
+            continue;
+        }
+
+        putenv(sprintf('%s=%s', $key, $value));
+        $_ENV[$key] = $value;
+        $_SERVER[$key] = $value;
+    }
+}
+
+loadProjectEnvFile(dirname(APP_ROOT) . DIRECTORY_SEPARATOR . 'mailing_app_openai.env');
+loadProjectEnvFile(APP_ROOT . DIRECTORY_SEPARATOR . 'openai.env');
 
 spl_autoload_register(static function (string $class): void {
     $prefix = 'MailingApp\\';

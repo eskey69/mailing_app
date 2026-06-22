@@ -6,3 +6,5 @@ config/*.backup
 public/error_log
 public/*error_log*
 storage/uploads/
+/mailing_app_openai.env
+/openai.env
