@@ -25,7 +25,7 @@ The UniServer MySQL password is read from:
 
 For local testing, create a junction:
 
-- `C:\Users\skrupa\UniServerZ\www\mailing_app` -> `C:\Users\skrupa\Documents\mailing_app`
+- `C:\Users\skrupa\UniServerZ\www\mailing_app` -> `C:\Users\skrupa\Documents\Codex\mailing_app`
 
 ## Database
 
@@ -42,13 +42,13 @@ Schema source:
 Config-only check:
 
 ```powershell
-& 'C:\Users\skrupa\UniServerZ\core\php83\php.exe' C:\Users\skrupa\Documents\mailing_app\bin\check_openai.php --config-only
+& 'C:\Users\skrupa\UniServerZ\core\php83\php.exe' C:\Users\skrupa\Documents\Codex\mailing_app\bin\check_openai.php --config-only
 ```
 
 Live API ping:
 
 ```powershell
-& 'C:\Users\skrupa\UniServerZ\core\php83\php.exe' C:\Users\skrupa\Documents\mailing_app\bin\check_openai.php
+& 'C:\Users\skrupa\UniServerZ\core\php83\php.exe' C:\Users\skrupa\Documents\Codex\mailing_app\bin\check_openai.php
 ```
 
 If you do not want to place the OpenAI key in `app.php`, create
